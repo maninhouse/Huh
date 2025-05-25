@@ -28,6 +28,8 @@ from io import BytesIO
 from pydub import AudioSegment
 from openai import OpenAI
 
+AudioSegment.converter = os.path.join(os.path.dirname(__file__), "static", "bin", "ffmpeg")
+
 app = Flask(__name__)
 
 openai_api_key = os.getenv('OPENAI_API_KEY')
